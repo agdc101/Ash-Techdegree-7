@@ -2,7 +2,7 @@
   box-sizing: border-box;      
 }
 body {
-    background-color: tomato;
+    background-color: rgb(252, 147, 128);
 }
 #bell {
     display: none;
@@ -11,3 +11,19 @@ img {
     width: 35px;
     height: 30px;
 }
+svg {
+    width: 100px;
+    height: 100px;                
+}
+
+
+
+.line-graph-ph {
+    width: 960px;
+    height: 280px;
+}
+.bar-chart-ph {
+    width: 400px;
+    height: 250px;
+}
+
