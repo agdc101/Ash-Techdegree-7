@@ -26,4 +26,9 @@ svg {
     width: 400px;
     height: 250px;
 }
-
+#button {
+    width: 12%;
+}
+.switch-candy a {
+    background-color: rgb(141, 141, 224);
+}

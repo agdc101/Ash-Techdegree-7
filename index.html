@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Your App</title>
+        <link rel='stylesheet' href='../dist/toggle-switch.css'>
         <link rel='stylesheet' href='styles.css'>
+        
     </head>
     <body>
         <div class='grid'>
@@ -161,12 +163,37 @@
                 </section>
                 <section class='message_user'>
                     <h3>SEARCH FOR USER</h3>
-                    <input type="text" placeholder='Search For User'>
-                    <input type="text" placeholder='Message For User'>
+                    <input type="text" id='user_search' placeholder='Search For User'>
+                    <input type="text" id='user_message' placeholder='Message For User'>
                     <button>SEND</button>
                 </section>
                 <section class='settings'>
                     <h3>SETTINGS</h3>
+                    <label class="switch-light switch-candy" onclick="">
+                        <input type="checkbox">                      
+                        <p>Send Email Notications</p>                      
+                        <span id='button'>
+                          <span>Off</span>
+                          <span>On</span>
+                          <a></a>
+                        </span>
+                        <label class="switch-light switch-candy" onclick="">
+                            <input type="checkbox">                         
+                            <p>Set Profile to Public</p>                          
+                            <span id='button'>
+                              <span>Off</span>
+                              <span>On</span>
+                              <a></a>
+                            </span>
+                        </label>
+                        <select class="form-field" id="timezone">
+                            <option disabled selected>Select a Timezone</option>
+                            <option>Eastern</option>
+                            <option>Pacific</option>
+                            <option>Mountain</option>
+                        </select>
+                        <button>Save</button>
+                        <button>Cancel</button>
                 </section>
             </main> 
         </div>       
