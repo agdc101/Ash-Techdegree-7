@@ -272,6 +272,19 @@ nav img {
 /* -------------MEDIA QUERIES---------------- */
 
 @media (min-width: 768px) {
+
+    section{
+        width: 95%;
+    }
+    .line-graph-ph {
+        width: 100%;
+    }
+    
+    .new_members a,
+    .new_members span,
+    .recent_activity span {
+        font-size: 13px;
+    }
     .grid {
         grid-template-columns: 80px 1fr;
         grid-template-areas: 
@@ -288,21 +301,12 @@ nav img {
         margin-bottom: 2.6em;
     }
     main {
+        margin: 0 auto;
         display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5em;
+   
+            
     }
-    .dash_div {
-        grid-area: dash;
-    }
-    .traffic_1 {
-        grid-area: traffic_line;
-    }
-    .traffic_2 {
-        grid-area: traffic_graphs;
-    }
-    .social {
-        grid-area: social;
-    }
-    .members_users {
-        grid-area: members_users;
-    }
+    
 }
