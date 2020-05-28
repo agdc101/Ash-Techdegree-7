@@ -1,18 +1,13 @@
 * {
-    box-sizing: border-box;      
+    box-sizing: border-box;     
+    font-family: 'Noto Sans JP', sans-serif; 
 }
-* {
-    font-family: 'Noto Sans JP', sans-serif;
-}
+
 /* ----- ------------------------- ---------- */
 /* ----- ---------BASE STYLES---------------- */
 
 body {
     background-color: rgb(238, 238, 255);
-}
-main {
-
-    grid-area: main;
 }
 .grid {
     display: grid;   
@@ -21,20 +16,30 @@ main {
         'nav'
         'main';
 }
+main {
+    grid-area: main;
+}
 img {
-    width: 75px;
-    height: 75px;
+    width: 55px;
+    height: 55px;
 }
 section {
     width: 90%;
     margin: 0 auto;
-    border-bottom: 1px solid lightgray;
     padding-bottom: 21px;
 }
+.daily-traffic,
+.social,
+.mobile_users,
+.recent_activity,
+.new_members,
+.settings,
+.message_user {
+    border-top: 1px solid lightgray;
+}
 
-
-/* ----- ---------------------------- ------- */
-/* ----- ------HEADER STYLES--------- ------- */
+/* ------------------------------------------ */
+/* -------------HEADER STYLES---------------- */
 
 header {
     padding: 18px 0;
@@ -85,15 +90,10 @@ nav img {
 }
 
 /* ----- ------------------------- ---------- */
-/* ----- -------GRAPH SECTION STYLES------------------ */
+/* ----------GRAPH SECTION STYLES------------ */
 
-.traffic_1 {
-    margin-top: 2em;
-}
 .dash_div {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
 .dash_div h3 {
     margin: 14px;
@@ -148,12 +148,13 @@ nav img {
     display: flex;
     align-items: center;
     border: 1px solid lightgray;
+    border-radius: 6px;
     width: 65%;
     max-width: 500px;
 }
 .stats {
     line-height: 2em;
-    font-size: 2.3em;
+    font-size: 2.15em;
 }
 .social_flex {
     margin-right: 4px;
@@ -169,7 +170,6 @@ nav img {
     width: 75px;
     height: 75px;
     padding: 7px;
-    border: solid rgb(136, 136, 211) 2px;
     border-radius: 15%;
     background-color: rgb(136, 136, 211);
 }
@@ -260,7 +260,7 @@ nav img {
     width: 50%;
 }
 .switch-candy a {
-    background-color: rgb(98, 250, 60);
+    background-color: rgb(141, 141, 224);
 }
 #timezone {
     margin-bottom: 21px;
@@ -271,15 +271,24 @@ nav img {
 /* ----- ------------------------- ---------- */
 /* -------------MEDIA QUERIES---------------- */
 
-@media (min-width: 768px) {
+@media (min-width: 798px) {
 
     section{
-        width: 95%;
-    }
-    .line-graph-ph {
         width: 100%;
     }
-    
+
+    .traffic_1,
+    .new_members,
+    .recent_activity,
+    .settings,
+    .message_user,
+    .social,
+    .daily-traffic,
+    .mobile_users {
+        padding: 21px;
+        border: 1px solid lightgray;
+    }
+   
     .new_members a,
     .new_members span,
     .recent_activity span {
@@ -291,9 +300,21 @@ nav img {
         'header header'
         'nav main';
     }
-    nav {
+    nav,
+    .switch_flex {
         justify-content: flex-start;
         flex-direction: column;
+    }
+    .switch-light {
+        margin-bottom: 18px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    #switch {
+        width: 30%;
+        height: 25%;
+        margin-left: auto;
     }
     nav img {
         width: 45px;
@@ -301,12 +322,23 @@ nav img {
         margin-bottom: 2.6em;
     }
     main {
-        margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 1.5em;
-   
-            
+          
+    }
+    .social_media {
+        display: flex;
+        justify-content: space-between;
+    }
+    .twitter,
+    .facebook,
+    .google {
+        width: 32%;
+    }
+    .dash_div,
+    .traffic_1,
+    .social {
+        grid-column: 1 / span 2;
     }
     
 }
