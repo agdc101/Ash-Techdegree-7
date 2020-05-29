@@ -56,13 +56,15 @@
                     <div class='traffic_options'>
                         <h3>TRAFFIC</h3>
                         <ul class='traffic_list'>
-                            <li>Hourly</li>
-                            <li>Daily</li>
-                            <li>Weekly</li>
-                            <li>Monthly</li>
+                            <li><button>Hourly</button></li>
+                            <li><button>Daily</button></li>
+                            <li><button>Weekly</button></li>
+                            <li><button>Monthly</button></li>
                         </ul>                        
                     </div>
-                    <img class='line-graph-ph' src='../graph PH.png' alt='PH'>
+                    <div class='bar_chart'>
+                        <canvas id="barChart"></canvas>
+                    </div>
                 </section>
                 <section class='daily-traffic'>
                     <h3>DAILY TRAFFIC</h3>
@@ -237,5 +239,7 @@
                 </section>
             </main>    
         </div>  
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src='js/script.js'></script>
     </body>
 </html>
