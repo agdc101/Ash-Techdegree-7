@@ -28,15 +28,15 @@ section {
     margin: 0 auto;
     padding-bottom: 21px;
 }
-
-.social,
-.mobile_users,
-.recent_activity,
-.new_members,
-.settings,
-.message_user {
+.border {
     border-top: 1px solid lightgray;
 }
+button:focus,
+input:focus,
+#user_message {
+    outline: none;
+}
+
 
 /* ------------------------------------------ */
 /* -------------HEADER STYLES---------------- */
@@ -48,6 +48,7 @@ header {
     background-color: rgb(136, 136, 211);
 }
 #ash_pic {
+    margin: 2px 12px 0 0;
     width: 35px;
     height: 35px;
 }
@@ -69,9 +70,7 @@ header span {
     width: 25px;
     height: 25px;
 }
-#ash_pic {
-    margin: 2px 12px 0 0;
-}
+
 /* ----- ------------------------- ---------- */
 /* ----- -------NAV STYLES------------------- */
 nav {
@@ -101,9 +100,9 @@ nav img {
 .alert {
     display: flex;
     justify-content: space-between;
-    max-width: 450px;
-    font-size: 14px;
-    margin: 18px 12px;
+    max-width: 1080px;
+    width: 80%;
+    margin: 18px auto;
     background-color: rgb(136, 136, 211);
     color: white;
     border-radius: 6px;
@@ -134,7 +133,9 @@ nav img {
     border-bottom: 1px solid darkgray;
 }
 #search {
+    padding: 12px;
     width: 60%;
+    max-width: 400px;
     height: 75%;
 }
 
@@ -153,15 +154,9 @@ nav img {
 .traffic_list li {
     margin: 0 10px;
 }
-.line-graph-ph {
-    width: 100%;
-    height: 5%;
-}
 
-.bar-chart-ph,
-.pie-chart-ph {
-    width: 100%;
-    height: 25%;
+.bottom {
+    border-bottom: 1px solid lightgray;
 }
 
 /* ----- ------------------------- ---------- */
@@ -244,7 +239,7 @@ nav img {
 #user_message,
 #msg_send_button,
 #timezone {
-    margin-top: 24px;
+    margin-top: 30px;
     height: 40px;
     width: 90%;
 }
@@ -297,36 +292,59 @@ nav img {
 /* ----- ------------------------- ---------- */
 /* -------------MEDIA QUERIES---------------- */
 
-@media (min-width: 798px) {
-
-    section{
-        width: 100%;
+@media (min-width: 798px) {   
+    .grid {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+        'header header'
+        'nav main';
     }
-
-    .new_members,
-    .recent_activity,
-    .settings,
-    .message_user,
-    .social,
-    .daily-traffic,
-    .mobile_users {
-        padding: 21px;
+    main {
+        display: grid;
+        grid-template-columns: 50%;          
+    }
+    .border {
         border: 1px solid lightgray;
     }
-    .traffic_1 {
+    .traffic_1,
+    .social {
+        width: 90vw;
         padding: 21px;
+    }        
+    .settings,
+    .message_user,
+    .new_members,
+    .recent_activity,
+    .mobile_users,
+    .daily-traffic {
+        width: 45vw;
     }
-   
+    .dash_div,
+    .traffic_1,
+    .social,
+    .alert {
+        grid-column: 1 / span 2;
+    }
+    nav img {
+        width: 45px;
+        height: 35px;
+        margin-bottom: 2.6em;
+    }
+
+    .traffic_list {
+        margin-right: 16px;
+    }
+    #lineGraph {
+        max-height: 420px;
+    }
+    .social_media {
+        display: flex;
+        justify-content: space-between;
+    }
     .new_members a,
     .new_members span,
     .recent_activity span {
         font-size: 13px;
-    }
-    .grid {
-        grid-template-columns: 80px 1fr;
-        grid-template-areas: 
-        'header header'
-        'nav main';
     }
     nav,
     .switch_flex {
@@ -344,34 +362,10 @@ nav img {
         height: 25%;
         margin-left: auto;
     }
-    nav img {
-        width: 45px;
-        height: 35px;
-        margin-bottom: 2.6em;
-    }
-    main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-          
-    }
-    .social_media {
-        display: flex;
-        justify-content: space-between;
-    }
     .twitter,
     .facebook,
     .google {
         width: 32%;
     }
-    .dash_div,
-    .traffic_1,
-    .social {
-        grid-column: 1 / span 2;
-    }
-    #barChart {
-        margin: 0 auto;
-        max-width: 1400px;
-        max-height: 350px;
     
-    }
 }

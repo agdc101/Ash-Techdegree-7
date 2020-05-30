@@ -15,9 +15,11 @@ alertDiv.addEventListener('click', e => {
     }
 });
 /*--------- ----------- --------------------*/
-/*--------- Line graph options--------------*/
+/*---------------- CHART.JS-----------------*/
 
-const barChartX = document.querySelector('#barChart');
+/*----------LINE GRAPH VARIABLES---- -------*/
+
+const lineGraphX = document.querySelector('#lineGraph');
 const dataHourly = [0, 150, 450, 400, 800, 500, 1050, 550, 1250, 2050, 1450, 2000, 2300];
 const dataDaily = [0, 450, 250, 450, 1050, 1200, 1750, 1050, 1650, 1450, 1500, 2500, 1450];
 const dataWeekly = [0, 850, 1250, 900, 2100, 1500, 1850, 1750, 1950, 2050, 1500, 2500, 2500];
@@ -26,8 +28,9 @@ const hourly = document.querySelector('li:nth-child(1)');
 const daily = document.querySelector('li:nth-child(2)');
 const weekly = document.querySelector('li:nth-child(3)');
 const monthly = document.querySelector('li:nth-child(4)');
-
-let barChart = new Chart(barChartX, {
+/*--------- ----------- --------------------*/
+/*--------------LINE GRAPH--- --------------*/
+let lineGraph = new Chart(lineGraphX, {
     type: 'line',
     data: {
         labels: ["0", "16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3",
@@ -40,11 +43,12 @@ let barChart = new Chart(barChartX, {
                 pointBorderColor: 'darkblue',
                 pointRadius: '8',
                 lineTension: '0',
-
                 }]                                                        
     },
     options: {
-        legend : { display: false },  
+        legend : { 
+            display: false 
+        },  
         tooltips: {
             enabled: false
             },
@@ -52,37 +56,93 @@ let barChart = new Chart(barChartX, {
         scales: {
             yAxes: [{
                 ticks: {
-                    fontSize: '18',
-                    beginAtZero: true,       
+                    fontSize: '18',                         
                 }
             }],
             xAxes: [{
                 ticks: {
-                    fontSize: '18',
-                    beginAtZero: true,       
+                    fontSize: '18',                          
                 }
             }],
         },   
         }       
-    }
-      
-);
+});
+/*--------- ----------- --------------------*/
 
-
-// --- CLICK HANDLERS
+// --- LINE GRAPH CLICK HANDLERS
 hourly.addEventListener('click', () => {
-    barChart.data.datasets[0].data = dataHourly;
-    barChart.update();
+    lineGraph.data.datasets[0].data = dataHourly;
+    lineGraph.update();
 })
 daily.addEventListener('click', () => {
-    barChart.data.datasets[0].data = dataDaily;
-    barChart.update();
+    lineGraph.data.datasets[0].data = dataDaily;
+    lineGraph.update();
 })
 weekly.addEventListener('click', () => {
-    barChart.data.datasets[0].data = dataWeekly;
-    barChart.update();
+    lineGraph.data.datasets[0].data = dataWeekly;
+    lineGraph.update();
 });
 monthly.addEventListener('click', () => {
-    barChart.data.datasets[0].data = dataMonthly;
-    barChart.update();
+    lineGraph.data.datasets[0].data = dataMonthly;
+    lineGraph.update();
+});
+/*--------- ----------- --------------------*/
+/*------- -------BAR CHART -----------------*/
+const barChartX = document.querySelector('#barChart');
+
+let barChart = new Chart(barChartX, {
+    type: 'bar',
+    data: {
+        labels: ["S", "M", "T", "W", "T", "F", "S"],
+        datasets: [{
+            label: '# of Hits',
+            data: [75, 115, 175, 125, 225, 200, 100],
+            backgroundColor: '#7477BF',
+            borderWidth: 1
+            }]                                                                                  
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+             ticks: {
+                beginAtZero:true
+                }
+            }]
+        },
+            legend : {
+                display: false 
+            }
+    }                
+});
+/*--------- ----------- --------------------*/
+/*------- -------PIE CHART -----------------*/
+const pieChartX = document.querySelector('#pieChart');
+
+let pieChart = new Chart(pieChartX, {
+    type: 'doughnut',
+    data: {
+        labels: ["Desktop", "Tablet", "Phones"],
+        datasets: [{
+            label: '# of Users',
+            data: [2000, 550, 500],
+            borderWidth: 0,
+            backgroundColor: [
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
+            ]
+    }]
+                                                                                
+    },
+    options: {
+        responsive: true,
+        legend: {
+            position: 'right',
+            labels: {
+            boxWidth: 20,
+            fontStyle: 'bold'
+            }
+        }
+    }                
 });
