@@ -31,12 +31,9 @@ section {
 .border {
     border-top: 1px solid lightgray;
 }
-button:focus,
-input:focus,
-#user_message {
+button:focus {
     outline: none;
 }
-
 
 /* ------------------------------------------ */
 /* -------------HEADER STYLES---------------- */
@@ -288,6 +285,10 @@ nav img {
 }
 #save_button {
     margin-bottom: 12px;
+}
+input:focus,
+#user_message:focus {
+    outline-color: rgb(178, 178, 247);
 }
 /* ----- ------------------------- ---------- */
 /* -------------MEDIA QUERIES---------------- */

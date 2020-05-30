@@ -20,10 +20,10 @@ alertDiv.addEventListener('click', e => {
 /*----------LINE GRAPH VARIABLES---- -------*/
 
 const lineGraphX = document.querySelector('#lineGraph');
-const dataHourly = [0, 150, 450, 400, 800, 500, 1050, 550, 1250, 2050, 1450, 2000, 2300];
-const dataDaily = [0, 450, 250, 450, 1050, 1200, 1750, 1050, 1650, 1450, 1500, 2500, 1450];
-const dataWeekly = [0, 850, 1250, 900, 2100, 1500, 1850, 1750, 1950, 2050, 1500, 2500, 2500];
-const dataMonthly = [0, 1050, 1750, 1500, 1500, 1800, 1950, 1750, 1850, 2150, 1550, 2500, 2000];
+const dataHourly = [0, 150, 850, 400, 800, 500, 1050, 550, 1250, 650, 1150, 2000];
+const dataDaily = [0, 500, 150, 450, 1050, 1200, 1750, 1050, 1650, 1450, 1500, 2500];
+const dataWeekly = [0, 850, 1350, 900, 2100, 1000, 1250, 950, 1950, 1850, 1500, 2000];
+const dataMonthly = [0, 1950, 2150, 1500, 1500, 1800, 1950, 1750, 1850, 2450, 1850, 2500];
 const hourly = document.querySelector('li:nth-child(1)');
 const daily = document.querySelector('li:nth-child(2)');
 const weekly = document.querySelector('li:nth-child(3)');
