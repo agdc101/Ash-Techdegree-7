@@ -5,8 +5,7 @@ alertDiv.innerHTML =
                     `<p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
                     <button class="alert-close">x</button>`;
 
-alertDiv.addEventListener('click', e => {
-  
+alertDiv.addEventListener('click', e => { 
     if (e.target.tagName === 'BUTTON') {
         alertDiv.style.transform = 'scale(0)';
         setTimeout( function () { 
@@ -77,20 +76,22 @@ const lineGraphChange = (data) => {
 
 // --- LINE GRAPH CLICK HANDLER
 trafficList.addEventListener('click', (e) => {
-    for ( let j = 0; j < listButtons.length; j += 1) {
-        listButtons[j].setAttribute('id', '');
-    }
-    if (e.target.textContent === 'Hourly') {
-        lineGraphChange(dataHourly);
-    } else if (e.target.textContent === 'Daily') {
-        lineGraphChange(dataDaily);
-    } else if (e.target.textContent === 'Weekly') {
-        lineGraphChange(dataWeekly);
-    } else {
-        lineGraphChange(dataMonthly);
-    }
-    e.target.setAttribute('id', 'chosen');
-})
+    if (e.target.tagName === 'BUTTON') {
+        for ( let j = 0; j < listButtons.length; j += 1) {
+            listButtons[j].setAttribute('id', '');
+        }
+        if (e.target.textContent === 'Hourly') {
+            lineGraphChange(dataHourly);
+        } else if (e.target.textContent === 'Daily') {
+            lineGraphChange(dataDaily);
+        } else if (e.target.textContent === 'Weekly') {
+            lineGraphChange(dataWeekly);
+        } else {
+            lineGraphChange(dataMonthly);
+        }
+        e.target.setAttribute('id', 'chosen');
+        }
+    })
 
 /*--------- ----------- --------------------*/
 /*------- -------BAR CHART -----------------*/
