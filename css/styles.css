@@ -1,13 +1,14 @@
 * {
     box-sizing: border-box;     
     font-family: 'Noto Sans JP', sans-serif; 
+    hyphens: auto;
 }
 
 /* ----- ------------------------- ---------- */
 /* ----- ---------BASE STYLES---------------- */
 
 body {
-    background-color: rgb(238, 238, 255);
+    background-color: rgb(249, 249, 255);
 }
 .grid {
     display: grid;   
@@ -34,6 +35,9 @@ section {
 button:focus {
     outline: none;
 }
+h3 {
+    font-size: 1em;
+}
 
 /* ------------------------------------------ */
 /* -------------HEADER STYLES---------------- */
@@ -55,19 +59,33 @@ header {
 }
 .title {
     color: #fff;
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin: 0 auto 0 12px;
 }
 header span {
+    font-size: 0.9rem;
     color: rgb(247, 247, 247);
     padding-top: 8px;
-    margin: 0 12px;
+    margin: 0 12px 0 24px;
 }
 .bell_end {
-    width: 25px;
-    height: 25px;
+    margin-right: 10px;
+    width: 27px;
+    height: 27px;
 }
-
+.bell_notif:hover .st0 {
+    fill: white;
+    transform: scale(1.1);
+}
+.dot {
+    position: relative;
+    bottom: 34px;
+    left: 14px;
+    background-color: lime;
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+}
 /* ----- ------------------------- ---------- */
 /* ----- -------NAV STYLES------------------- */
 nav {
@@ -149,9 +167,20 @@ nav img {
     align-items: center;
 }
 .traffic_list li {
+    font-size: 0.9em;
     margin: 0 10px;
 }
-
+.traffic_list li button{
+    padding: 10px 12px;
+    border-style: none;
+    background-color: transparent;;
+    transition: background-color 0.3s ease-in;
+    border-radius: 46%;
+}
+#chosen {
+    background-color: limegreen;
+    color: white;
+}
 .bottom {
     border-bottom: 1px solid lightgray;
 }
@@ -203,9 +232,11 @@ nav img {
     margin-bottom: 2.6em;
 }
 .members_flex h4 {
+    font-size: 0.9rem;
     margin: 0 0 8px 0;
 }
 .members_flex span {
+    font-size: 0.85rem;
     margin-left: auto;
 }
 .activity_flex img,
@@ -219,10 +250,6 @@ nav img {
     flex-direction: column;
 }
 
-#switch {
-    width: 12%;
-}
-
 /* ----- ------------------------- ---------- */
 /* ------RECENT ACTIVITY SECTION STYLES------ */
 .activity_flex {
@@ -231,6 +258,10 @@ nav img {
 }
 .activity_flex img {
     margin: 0 24px 24px 0;
+}
+.activity_flex p,
+.activity_flex span {
+    font-size: 0.85rem;
 }
 #user_search,
 #user_message,
@@ -271,14 +302,15 @@ nav img {
 }
 .switch-light {
     margin-right: 12px;
-    width: 45%;
-}
-#switch {
-    background-color: rgb(71, 71, 129);
     width: 50%;
 }
+
+#switch {
+    background-color: rgb(71, 71, 129);
+    width: 45%;
+}
 .switch-candy a {
-    background-color: rgb(141, 141, 224);
+    background-color: lime;
 }
 #timezone {
     margin-bottom: 21px;
@@ -338,15 +370,16 @@ input:focus,
     #lineGraph {
         max-height: 420px;
     }
+    .twitter,
+    .facebook,
+    .google {
+        width: 32%;
+    }
     .social_media {
         display: flex;
         justify-content: space-between;
     }
-    .new_members a,
-    .new_members span,
-    .recent_activity span {
-        font-size: 13px;
-    }
+
     nav,
     .switch_flex {
         justify-content: flex-start;
@@ -358,15 +391,13 @@ input:focus,
         display: flex;
         justify-content: space-around;
     }
-    #switch {
-        width: 30%;
-        height: 25%;
-        margin-left: auto;
+    .push {
+        margin-right: 27px;
     }
-    .twitter,
-    .facebook,
-    .google {
-        width: 32%;
+    #switch {
+        width: 20%;
+        height: 25%;
+        margin: 0 auto;
     }
     
 }
