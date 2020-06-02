@@ -1,5 +1,4 @@
 /*--------- Alert Div function--------------*/
-
 const alertDiv = document.querySelector('#alert');
 alertDiv.innerHTML = 
                     `<p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
@@ -13,6 +12,37 @@ alertDiv.addEventListener('click', e => {
         }, 700);
     }
 });
+/*------- Notification Div function---------*/
+const notiDiv = document.querySelector('#notifications');
+const notiButton = document.querySelector('.notifications');
+const dot = document.querySelector('.dot');
+notiDiv.style.display = 'none';
+notiDiv.innerHTML = `<div class='alert_flex'><p>You have 6 unread messages</p> <button>x</button></div>
+                     <div class='alert_flex'><p>You have 3 new followers</p> <button>x</button></div>
+                     <div class='alert_flex'><p>Your password expires in 7 days</p> <button>x</button></div>`;
+const notiItems = document.querySelectorAll('.alert_flex');
+
+notiButton.addEventListener('click', () => {
+    dot.style.display = 'none';
+    if ( notiDiv.style.display === 'none' && notiItems.length > 0) {
+        notiDiv.style.display = 'block';
+    } else {
+        notiDiv.style.display = 'none'
+    }
+    
+});
+notiDiv.addEventListener('click', (e) => {
+    
+    if ( e.target.tagName === 'BUTTON') {
+    e.target.parentNode.remove();
+    console.log(notiItems.length);
+        if ( notiItems.length === 1 ) {
+            notiDiv.style.display = 'none';
+        }
+    }
+
+});
+
 /*--------- ----------- --------------------*/
 /*---------------- CHART.JS-----------------*/
 
@@ -153,3 +183,21 @@ let pieChart = new Chart(pieChartX, {
         }
     }                
 });
+/*--------- ----------- --------------------*/
+/*------- ----MESSAGE SECTION JS -----------*/
+const userSearch = document.querySelector('#user_search');
+const userMessage = document.querySelector('#user_message');
+const userSend = document.querySelector('#msg_send_button');
+
+userSend.addEventListener('click', () => {
+    if ( userSearch.value === '' && userMessage.value === '' ) {
+        alert('Search and message fields are both blank!');
+    } else if ( userSearch.value === '' ) {
+        alert('The search field is blank!');
+    } else if ( userMessage.value === '' ) {
+        alert('The message field must be filled in!');
+    } else {
+        alert(`Thanks! Your message was sent successfully sent to ${userSearch.value}`);
+    }
+})
+/*--------- ----------- --------------------*/

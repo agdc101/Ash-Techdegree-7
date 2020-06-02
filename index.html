@@ -15,7 +15,7 @@
             <header>
                 <p class='title'>Your <strong>App</strong> &trade;</p>                   
                     <div class='bell_notif'>
-                        <a>                        
+                        <a class='notifications'>                        
                             <svg class='bell_end' version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
                                 <style type="text/css">
@@ -210,9 +210,11 @@
                 <div class='border'>
                     <section class='message_user'>
                         <h3>MESSAGE USER</h3>
-                        <input type="text" id='user_search' placeholder='Search For User...'>
-                        <textarea type="text" id='user_message' placeholder='Message For User...'></textarea>
-                        <button id='msg_send_button'>SEND</button>
+                        <form>
+                            <input type="text" id='user_search' placeholder='Search For User...' required>
+                            <textarea type="text" id='user_message' placeholder='Message For User...' required></textarea>
+                            <button id='msg_send_button'>SEND</button>
+                        </form>
                     </section>
                 </div>
                 <div class='border'>

@@ -43,7 +43,7 @@ h3 {
 /* -------------HEADER STYLES---------------- */
 
 header {
-    padding: 18px 0;
+    padding: 18px 0 16px 0;
     display: flex;
     grid-area: header;
     background-color: rgb(136, 136, 211);
@@ -80,10 +80,10 @@ header span {
     transform-origin: 50% 50%;
 }
 .dot {
-    position: relative;
-    bottom: 40px;
-    left: 19px;
-    background-color: rgb(4, 231, 4);
+    position: absolute;
+    top: 12px;
+    right: 215px;
+    background-color: rgb(3, 226, 3);
     border-radius: 50%;
     width: 10px;
     height: 10px;
@@ -91,13 +91,46 @@ header span {
                 background-color 0.3s ease-in;
 }
 .bell_notif:hover .dot {
-    transform: scale(1.5) translate3d(-2px, 6px, 0);
+    transform: scale(1.5) translate3d(-3px, 6px, 0);
     background-color: lime;
 }
 .bell_notif:hover .st0 {
     transform: scale(1.2);
     fill: white;
 }
+#notifications {
+    position: absolute;
+    top: 55px;
+    right: 200px;
+    padding: 0 16px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 0px 9px rgb(136, 136, 136);
+    display: flex;
+    justify-content: space-between;   
+    font-size: 0.92rem;
+    border-radius: 4px;
+}
+#notifications p {
+    font-size: 0.93em;
+}
+.alert_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(207, 207, 207); 
+}
+.alert_flex button {
+    margin: 10px 0px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: color 0.3s ease-in,
+                background-color 0.3s ease-in;
+}
+.alert_flex button:hover {
+    color: white;
+    background-color: rgb(223, 0, 0);
+}
+
 
 /* ----- ------------------------- ---------- */
 /* ----- -------NAV STYLES------------------- */
@@ -138,16 +171,23 @@ nav img {
     transition: transform 0.7s ease-out;
 }
 .alert p {
+    font-size: 0.85em;
     margin: 0;
 }
-.alert button {
+.alert button,
+.alert_flex button {
     color: white;
     background-color: transparent;
     border: none;
 }
-.alert button:hover {
-    color: red;
+.alert button:hover,
+.alert_flex button {
+    color: rgb(223, 0, 0);;
 }
+.alert_flex button {
+    margin-left: 16px;
+}
+
 /* ----- ------------------------- ---------- */
 /* ----------GRAPH SECTION STYLES------------ */
 
