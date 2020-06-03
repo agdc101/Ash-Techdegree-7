@@ -311,7 +311,7 @@ nav img {
 /* ----- ------------------------- ---------- */
 /* ------RECENT ACTIVITY SECTION STYLES------ */
 .activity_flex {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     display: flex;
 }
 .activity_flex img {
