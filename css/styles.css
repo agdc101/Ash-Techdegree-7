@@ -35,6 +35,9 @@ section {
 button:focus {
     outline: none;
 }
+button:active {
+    box-shadow: inset 0px 0px 8px #494949;
+}
 h3 {
     font-size: 1em;
 }
@@ -161,6 +164,7 @@ nav img {
 .alert {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 1080px;
     width: 80%;
     margin: 18px auto;
@@ -398,6 +402,11 @@ input:focus,
         width: 90vw;
         padding: 21px;
     }        
+    nav img {
+        width: 45px;
+        height: 35px;
+        margin-bottom: 2.6em;
+    }
     .settings,
     .message_user,
     .new_members,
@@ -412,12 +421,6 @@ input:focus,
     .alert {
         grid-column: 1 / span 2;
     }
-    nav img {
-        width: 45px;
-        height: 35px;
-        margin-bottom: 2.6em;
-    }
-
     .traffic_list {
         margin-right: 16px;
     }
