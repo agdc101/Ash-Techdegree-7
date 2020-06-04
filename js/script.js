@@ -37,7 +37,12 @@ const profileSwitch  = document.querySelector('#profile_switch');
 const buttonsDiv = document.querySelector('.form_buttons');
 const timezone = document.querySelector('#timezone');
 /*--------- ----------- --------------------*/
-
+// *----------USER SEARCH VARIABLES---------*/
+const input = document.querySelector('#user_search');
+const members = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+const dropdown = document.querySelector('.suggestions');
+let suggestion = '';
+/*--------- ----------- --------------------*/
 /*---------------JS FUNCTIONS---------------*/
 /*--------- Alert Div function--------------*/
 alertDiv.innerHTML = 
@@ -72,7 +77,6 @@ notiDiv.addEventListener('click', (e) => {
     
     if ( e.target.tagName === 'BUTTON') {
     e.target.parentNode.remove();
-    console.log(notiItems.length);
         if ( notiItems.length === 1 ) {
             notiDiv.style.display = 'none';
         }
@@ -246,3 +250,32 @@ window.addEventListener('load', () => {
         timezone.value = timezoneValue;
     }
 })
+/*--------- ----------- --------------------*/
+/*---- ---Autocomplete Search Function -----*/
+input.addEventListener('keyup', () => {
+    const search = input.value.toLowerCase();
+    dropdown.innerHTML = '';
+    if (search === '') {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+        for ( let j = 0; j < members.length; j += 1 ) {
+            let result = members[j].toLowerCase().startsWith(search);  
+            if ( result ) {              
+                suggestion = document.createElement('P');
+                suggestion.textContent = members[j];
+                dropdown.append(suggestion);                
+            }              
+        }
+    }   
+});
+// If user selects option, the option is then entered into search field.
+dropdown.addEventListener('click', (e) => {
+    if (e.target.tagName = 'P') {
+        input.value = e.target.textContent;
+    }
+})
+// click event for when user clicks out of the dropdown menu.
+window.addEventListener('click', () => {
+    dropdown.style.display = 'none';
+});

@@ -209,8 +209,12 @@
                 <div class='border'>
                     <section class='message_user'>
                         <h3>MESSAGE USER</h3>
-                        <form>
-                            <input type="text" id='user_search' placeholder='Search For User...' required>
+                        <form autocomplete='off'>  
+                            <div class='autocomplete'>                                                
+                                <input type="text" id='user_search' placeholder='Search For User...' required>
+                                <div class='suggestions'>
+                                </div>
+                            </div>
                             <textarea id='user_message' placeholder='Message For User...' required></textarea>
                             <button id='msg_send_button'>SEND</button>
                         </form>
