@@ -12,6 +12,7 @@ body {
 }
 .grid {
     display: grid;   
+    grid-template-rows: 65px 65px 1fr;
     grid-template-areas: 
         'header'
         'nav'
@@ -21,8 +22,8 @@ main {
     grid-area: main;
 }
 img {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
 }
 section {
     width: 90%;
@@ -414,6 +415,11 @@ input:focus,
 }
 /* ----- ------------------------- ---------- */
 /* -------------MEDIA QUERIES---------------- */
+@media (min-width: 320px) {
+    .grid {
+        grid-template-rows: 75px 75px 1fr;
+    }
+}
 @media (min-width: 598px) {
     #user_search,
     #user_message,
@@ -430,6 +436,7 @@ input:focus,
 @media (min-width: 798px) {   
     .grid {
         grid-template-columns: 55px 1fr;
+        grid-template-rows: none;
         grid-template-areas: 
         'header header'
         'nav main';
@@ -447,7 +454,7 @@ input:focus,
         padding: 21px;
     }        
     nav img {
-        width: 45px;
+        width: 40px;
         height: 35px;
         margin-bottom: 2.6em;
     }
