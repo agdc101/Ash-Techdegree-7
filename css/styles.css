@@ -435,7 +435,7 @@ input:focus,
 }
 @media (min-width: 798px) {   
     .grid {
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 60px 1fr;
         grid-template-rows: none;
         grid-template-areas: 
         'header header'
@@ -512,7 +512,7 @@ input:focus,
     }
     
 }
-@media (min-width: 998px) {
+@media (min-width: 1024px) {
     .grid {
         grid-template-columns: 80px 1fr;
     }
