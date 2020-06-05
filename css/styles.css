@@ -433,7 +433,7 @@ input:focus,
         margin-top: 16px;
     }
 }
-@media (min-width: 798px) {   
+@media (min-width: 768px) {   
     .grid {
         grid-template-columns: 60px 1fr;
         grid-template-rows: none;
