@@ -134,18 +134,38 @@ trafficList.addEventListener('click', (e) => {
         for ( let j = 0; j < listButtons.length; j += 1) {
             listButtons[j].setAttribute('id', '');
         }
-        if (e.target.textContent === 'Hourly') {
-            lineGraphChange(dataHourly);
-        } else if (e.target.textContent === 'Daily') {
-            lineGraphChange(dataDaily);
-        } else if (e.target.textContent === 'Weekly') {
-            lineGraphChange(dataWeekly);
-        } else {
-            lineGraphChange(dataMonthly);
+        switch (e.target.textContent) {
+            case 'Hourly':
+                lineGraphChange(dataHourly);
+                break;
+            case 'Daily':
+                lineGraphChange(dataDaily);
+                break;
+            case 'Weekly':
+                lineGraphChange(dataWeekly);
+                break;
+            case 'Monthly':
+                lineGraphChange(dataMonthly);
+                break;
         }
         e.target.setAttribute('id', 'chosen');
         }
     })
+
+    switch (e.target.textContent) {
+        case 'Hourly':
+            lineGraphChange(dataHourly);
+            break;
+        case 'Daily':
+            lineGraphChange(dataDaily);
+            break;
+        case 'Weekly':
+            lineGraphChange(dataWeekly);
+            break;
+         case 'Monthly':
+            lineGraphChange(dataMonthly);
+            break;
+    }
 
 /*--------- ----------- --------------------*/
 /*------- -------BAR CHART -----------------*/
