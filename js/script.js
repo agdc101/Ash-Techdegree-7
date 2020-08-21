@@ -150,22 +150,23 @@ trafficList.addEventListener('click', (e) => {
         }
         e.target.setAttribute('id', 'chosen');
         }
+        switch (e.target.textContent) {
+            case 'Hourly':
+                lineGraphChange(dataHourly);
+                break;
+            case 'Daily':
+                lineGraphChange(dataDaily);
+                break;
+            case 'Weekly':
+                lineGraphChange(dataWeekly);
+                break;
+             case 'Monthly':
+                lineGraphChange(dataMonthly);
+                break;
+        }
     })
 
-    switch (e.target.textContent) {
-        case 'Hourly':
-            lineGraphChange(dataHourly);
-            break;
-        case 'Daily':
-            lineGraphChange(dataDaily);
-            break;
-        case 'Weekly':
-            lineGraphChange(dataWeekly);
-            break;
-         case 'Monthly':
-            lineGraphChange(dataMonthly);
-            break;
-    }
+    
 
 /*--------- ----------- --------------------*/
 /*------- -------BAR CHART -----------------*/
